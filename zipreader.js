@@ -1,6 +1,9 @@
+'use strict';
 var StreamZip = require('node-stream-zip');
+var Markdown = require('./lib/markdown.js');
 
 (function () {
+
   var file = process.argv[2];
 
   if (!file) {
