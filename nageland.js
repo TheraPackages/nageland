@@ -48,9 +48,15 @@ Nageland.prototype.readHtml = function (scope, name, callback) {
     try {
       data = this.zip.entryDataSync("doc/" + this.manifest[scope][name]).toString('utf8');
     } catch (e) {
-      console.error(e);
     }
-    
+
+    if (data == null) {
+      if (callback) {
+        callback(null);
+        return;
+      }
+    }
+
     md.renderData(data, opts, function(err) {
 
       if (err) {
