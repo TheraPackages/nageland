@@ -18,7 +18,7 @@ Nageland.prototype.load = function (fileName, onDone) {
 
   zip.on('ready', () => {
     this.ok = true;
-    
+
     // 读取manifest文件
     var manifestText = zip.entryDataSync("doc/MANIFEST.json").toString('utf8');
     this.manifest = JSON.parse(manifestText);
@@ -44,11 +44,13 @@ Nageland.prototype.readHtml = function (scope, name, callback) {
   });
 
   if (this.manifest[scope] && this.manifest[scope][name]) {
-    var data = this.zip.entryDataSync("doc/" + this.manifest[scope][name]).toString('utf8');
-    if (data == null) {
-      callback(null);
-      return;
+    var data = null;
+    try {
+      data = this.zip.entryDataSync("doc/" + this.manifest[scope][name]).toString('utf8');
+    } catch (e) {
+      console.error(e);
     }
+    
     md.renderData(data, opts, function(err) {
 
       if (err) {
