@@ -2,15 +2,14 @@
   "name": "nageland",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "nageland.js",
   "scripts": {
-    "zip": "zip -r doc.zip doc",
+    "doc": "zip -r doc.zip doc && cp -rf doc.zip ~/.thera",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Thera Group",
   "license": "MIT",
   "dependencies": {
-    "markdown-to-html": "0.0.13",
     "season": "^6.0.0",
     "gfm-linkify": "^0.1.0",
     "marked": "^0.3.2",

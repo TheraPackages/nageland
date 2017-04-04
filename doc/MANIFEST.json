@@ -1,6 +1,6 @@
 {
   ".source.we": {
-    "a": "a.md",
+    "a": ".md",
     "div": "div.md"
   },
   ".source.lua": {

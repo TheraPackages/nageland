@@ -1,14 +1,14 @@
-#!/usr/bin/env node
 'use strict';
 (function () {
-  var Nageland = require('./nageland');
+  var Nageland = require('../nageland');
   var nageland = new Nageland();
-  nageland.load('doc.zip');
-  setTimeout(function () {
-    var html = nageland.getHtml('.source.we', 'div', function (data) {
+  nageland.load('../doc.zip', function () {
+    nageland.readHtml('.source.we', 'div', function (data) {
+      // console.log("<meta charset='utf-8' />");
+      console.log('<meta http-equiv="content-type" content="text/html;charset=utf-8">');
       console.log(data);
     });
-  }, 100);
+  });
 })();
 
 // var Markdown = require('./lib/markdown');

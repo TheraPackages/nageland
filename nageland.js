@@ -9,7 +9,7 @@ function Nageland() {
   this.manifest = null;
 }
 
-Nageland.prototype.load = function (fileName) {
+Nageland.prototype.load = function (fileName, onDone) {
 
   var zip = new StreamZip({file: fileName, storeEntries: true});
   zip.on('error', function(err) {
@@ -18,21 +18,19 @@ Nageland.prototype.load = function (fileName) {
 
   zip.on('ready', () => {
     this.ok = true;
-    console.log('Entries read: ' + zip.entriesCount);
-    var entries = zip.entries();
-    for (var i in entries) {
-      console.log(entries[i].name);
-    }
-
+    
     // 读取manifest文件
     var manifestText = zip.entryDataSync("doc/MANIFEST.json").toString('utf8');
     this.manifest = JSON.parse(manifestText);
+    if (onDone) {
+      onDone();
+    }
   });
 
   this.zip = zip;
 };
 
-Nageland.prototype.getHtml = function (scope, name, callback) {
+Nageland.prototype.readHtml = function (scope, name, callback) {
   if (!this.ok) {
     return null;
   }
@@ -41,9 +39,9 @@ Nageland.prototype.getHtml = function (scope, name, callback) {
   var md = new Markdown();
   md.bufmax = 4096;
   var opts = {};
+
   md.once('end', function() {
   });
-
 
   if (this.manifest[scope] && this.manifest[scope][name]) {
     var data = this.zip.entryDataSync("doc/" + this.manifest[scope][name]).toString('utf8');
@@ -58,10 +56,6 @@ Nageland.prototype.getHtml = function (scope, name, callback) {
         process.exit();
       }
 
-      // NOTE this important
-      // console.log(md.html);
-      // md.pipe(process.stdout);
-      // console.log(JSON.stringify(data));
       callback(md.html);
     });
   } else {

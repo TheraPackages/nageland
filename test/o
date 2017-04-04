@@ -1,0 +1,55 @@
+<h3 id="-div-of-element"><code>&lt;div&gt;</code> of Element</h3>
+<p><code>&lt;div&gt;</code> 组件定义了指向某个页面的一个超链接. 此组件的作用和用法与HTML5中的 <code>&lt;a&gt;</code> 非常类似，区别在于 Weex 的 <code>&lt;a&gt;</code> 组件不能直接在里面添加文本（字符串），如果要展示文本，应该添加 <code>&lt;text&gt;</code> 组件。</p>
+<pre><code class="lang-html">&lt;template&gt;
+  &lt;div class=&quot;wrapper&quot;&gt;
+    &lt;a class=&quot;button&quot; href=&quot;#&quot;&gt;
+      &lt;text class=&quot;text&quot;&gt;Jump&lt;/text&gt;
+    &lt;/a&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+&lt;style&gt;
+  .wrapper {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .button {
+    width: 450px;
+    margin-top: 30px;
+    margin-left: 150px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #DDDDDD;
+    background-color: #F5F5F5
+  }
+  .text {
+    font-size: 60px;
+    color: #666666;
+    text-align: center;
+  }
+&lt;/style&gt;
+</code></pre>
+<h4 id="-">样式</h4>
+<p><code>&lt;a&gt;</code>支持所有通用样式。</p>
+<ul>
+<li>盒模型</li>
+<li><code>xflexbox</code> 布局</li>
+<li><code>position</code></li>
+<li><code>opacity</code></li>
+<li><code>background-color</code><br>查看 <a href="http://weex.apache.org/cn/references/common-style.html">组件通用样式</a> .</li>
+</ul>
+<h4 id="-">事件</h4>
+<p><code>&lt;a&gt;</code> 支持所有通用事件。</p>
+<ul>
+<li>click<br><strong> 注意：</strong>我们不能保证 <code>click</code> 事件和 <code>href</code> 跳转的执行顺序。建议不要使用 <code>click</code> 事件来处理 <code>href</code> 跳转前的逻辑处理。&lt;/li&gt;</li>
+<li><code>longpress</code></li>
+<li><code>appear</code></li>
+<li><code>disappear</code><br>查看 <a href="http://weex.apache.org/cn/references/common-event.html">通用事件</a>。</li>
+</ul>
+<h4 id="-">约束</h4>
+<ul>
+<li>不能直接在 &lt;code&gt;&lt;a&gt;&lt;/code&gt; 中添加文本。</li>
+<li>请不要为 &lt;code&gt;&lt;a&gt;&lt;/code&gt; 添加 click 事件。我们不能确保 &lt;code&gt;click&lt;/code&gt; 事件和 &lt;code&gt;href&lt;/code&gt; 跳转的执行顺序。</li>
+</ul>
+
