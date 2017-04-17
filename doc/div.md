@@ -1,56 +1,59 @@
 ### `<div>` of Element
-`<div>` 组件定义了指向某个页面的一个超链接. 此组件的作用和用法与HTML5中的 `<a>` 非常类似，区别在于 Weex 的 `<a>` 组件不能直接在里面添加文本（字符串），如果要展示文本，应该添加 `<text>` 组件。
+`<div>` 组件是用于包装其它组件的最基本容器。支持所有的通用样式、特性、`flexbox` 布局。其类似于 HTML 的 `<div>` 容器，但不能直接在里面添加文本（字符串），如果要展示文本，应该使用 `<text>` 组件。历史版本中，`<div>` 别名是 `<container>`，目前已经弃用。
 
+111  <br/> 222
+
+**注意:** d  <br/>
+`<div>` 嵌套层级不可过深，否则容易引起性能问题，建议控制在 10 层以内。
+
+一个简单例子：
 ```html
 <template>
-  <div class="wrapper">
-    <a class="button" href="#">
-      <text class="text">Jump</text>
-    </a>
+  <div>
+    <text class="text">Hello World!</text>
   </div>
 </template>
 <style>
-  .wrapper {
-    flex-direction: column;
-    justify-content: center;
-  }
-  .button {
-    width: 450px;
-    margin-top: 30px;
-    margin-left: 150px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    border-width: 2px;
-    border-style: solid;
-    border-color: #DDDDDD;
-    background-color: #F5F5F5
-  }
-  .text {
-    font-size: 60px;
-    color: #666666;
-    text-align: center;
-  }
+.text {
+  font-size: 70;
+  color: #ff0000
+}
 </style>
+<script></script>
 ```
 
-#### 样式
-`<a>`支持所有通用样式。
+### 子组件
+`<div>` 基本容器组件，因此支持包括 `<div>` 在内的任何组件作为自己的子组件。因此，在写一个组件时，推荐外层使用 `<div>` 作为根容器。
+
+### 样式
+`<div>`支持所有通用样式。
 - 盒模型
-- `xflexbox` 布局
+- `flexbox` 布局
 - `position`
 - `opacity`
 - `background-color`
-查看 [组件通用样式](http://weex.apache.org/cn/references/common-style.html) .
+查看 [组件通用样式](https://weex.incubator.apache.org/cn/v-0.10/references/components/refresh.html) .
 
-#### 事件
-`<a> 支持所有通用事件。
-- click
-  ** 注意：**我们不能保证 `click` 事件和 `href` 跳转的执行顺序。建议不要使用 `click` 事件来处理 `href` 跳转前的逻辑处理。</li>
+### 事件
+`<div>` 支持所有通用事件：
+- `click`
 - `longpress`
 - `appear`
 - `disappear`
-查看 [通用事件](http://weex.apache.org/cn/references/common-event.html)。
 
-#### 约束
-- 不能直接在 `<a>` 中添加文本。
-- 请不要为 `<a>` 添加 click 事件。我们不能确保 `click` 事件和 `href` 跳转的执行顺序。
+查看 [通用事件](https://weex.incubator.apache.org/cn/v-0.10/references/common-event.html)
+
+### 约束
+不能直接在 `<div>` 中添加文本。错误示例，“Hello World!” 无法被正常渲染。
+```html
+<template>
+  <div>Hello World!</div>
+</template>
+<style>
+.text {
+  font-size: 70;
+  color: #ff0000
+}
+</style>
+<script></script>
+```

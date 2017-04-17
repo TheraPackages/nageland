@@ -34,7 +34,7 @@
 ```
 
 #### 样式
-```<a>```支持所有通用样式。
+`<a>`支持所有通用样式。
 - 盒模型
 - `xflexbox` 布局
 - `position`
@@ -43,9 +43,9 @@
 查看 [组件通用样式](http://weex.apache.org/cn/references/common-style.html) .
 
 #### 事件
-```<a>``` 支持所有通用事件。
+`<a>` 支持所有通用事件。
 - click
-  ** 注意：**我们不能保证 `click` 事件和 `href` 跳转的执行顺序。建议不要使用 `click` 事件来处理 `href` 跳转前的逻辑处理。</li>
+  **注意** 我们不能保证 `click` 事件和 `href` 跳转的执行顺序。建议不要使用 `click` 事件来处理 `href` 跳转前的逻辑处理。</li>
 - `longpress`
 - `appear`
 - `disappear`

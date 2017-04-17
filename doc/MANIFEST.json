@@ -1,7 +1,17 @@
 {
   ".source.we": {
     "a": "a.md",
-    "div": "div.md"
+    "div": "div.md",
+    "indicator": "indicator.md",
+    "text": "text.md",
+    "img": "img.md",
+    "switch": "switch.md",
+    "image": "image.md",
+    "input": "input.md",
+    "list": "list.md",
+    "scroller": "scroller.md",
+    "cell": "cell.md",
+    "slider": "slider.md"
   },
   ".source.lua": {
   }
