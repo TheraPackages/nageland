@@ -1,19 +1,20 @@
 'use strict';
 
- (function () {
-   var Nageland = require('../nageland');
-   var nageland = new Nageland();
-   nageland.load('../doc.zip', function () {
-     nageland.readHtml('.source.we', 'img', function (data) {
-       // console.log("<meta charset='utf-8' />");
-       // console.log('<meta http-equiv="content-type" content="text/html;charset=utf-8">');
-       console.log(data);
-     });
-   });
- })();
-/*
+ // (function () {
+ //   var Nageland = require('../nageland');
+ //   var nageland = new Nageland();
+ //   nageland.load('../doc.zip', function () {
+ //     nageland.readHtml('.source.we', 'img', function (data) {
+ //       // console.log("<meta charset='utf-8' />");
+ //       // console.log('<meta http-equiv="content-type" content="text/html;charset=utf-8">');
+ //       console.log(data);
+ //     });
+ //   });
+ // })();
+
 (function () {
 
+	/*
   var p = new Promise((resolve, reject) => {
         //做一些异步操作
         setTimeout(function(){
@@ -43,6 +44,7 @@
   // console.log(ret);
 
   return;
+  */
   try {
 
     function _callback(res) {
@@ -97,4 +99,3 @@
 //   console.log(md.html);
 //   // md.pipe(process.stdout);
 // });
-*/

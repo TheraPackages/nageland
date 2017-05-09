@@ -1,36 +1,37 @@
-用于定义列表中的子列表项，类似于 HTML 中的 ul 之于 li。Weex 会对 <cell> 进行高效的内存回收以达到更好的性能，该组件必须作为<list> 组件的子组件, 这是为了优化滚动时的性能。
+### `<cell>` of Element
+用于定义列表中的子列表项，类似于 HTML 中的 ul 之于 li。
+Weex 会对 `<cell>` 进行高效的内存回收以达到更好的性能，该组件必须作为`<list>` 组件的子组件, 这是为了优化滚动时的性能。
 
-子组件
+### 子组件
 支持所有 Weex 的组件作为它的子组件。
 
-样式
-注意：
+### 样式
+**注意：**<br/>
+你不能给 `<cell>` 设定flex值。 `<cell>`的宽度等于父组件 `<list>` 的宽度，并且 `<cell>` 高度自适应。
 
-你不能给 <cell> 设定flex值。 <cell>的宽度等于父组件 <list> 的宽度，并且 <cell> 高度自适应。
+- 通用样式：支持所有通用样式
 
-通用样式：支持所有通用样式
+  - 盒模型
+  - `flexbox` 布局
+  - `position`
+  - `opacity`
+  - `background-color`
 
-盒模型
-flexbox 布局
-position
-opacity
-background-color
-查看 组件通用样式
+  查看 [组件通用样式](https://weex.incubator.apache.org/cn/v-0.10/references/common-style.html)
 
-事件
-通用事件
+### 事件
+- 通用事件<br/>
+  支持所有通用事件：
+  - `click`
+  - `longpress`
+  - `appear`
+  - `disappear`
 
-支持所有通用事件：
+  查看 [通用事件](https://weex.incubator.apache.org/cn/v-0.10/references/common-event.html)
 
-click
-longpress
-appear
-disappear
-查看 通用事件
+### 示例
 
-示例
-mobile_preview
-
+```html
 <template>
   <div>
     <list class="list">
@@ -158,4 +159,4 @@ module.exports = {
   }
 }
 </script>
-体验一下
+```

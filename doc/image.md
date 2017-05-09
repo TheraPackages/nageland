@@ -1,22 +1,26 @@
-<image> 组件用于渲染图片，并且它不能包含任何子组件。可以用 <img> 作简写。
+### `<image>` of Element
+`<image>` 组件用于渲染图片，**并且它不能包含任何子组件**。可以用 `<img>` 作简写。
 
-需要注意的是，需要明确指定 width 和 height，否则图片无法显示。
+需要注意的是，需要明确指定 `width` 和 `height`，否则图片无法显示。
 
-简单例子：
+##### 简单例子：
 
+```html
 <template>
   <div>
-    <img style="width: 560;height: 560;" src="https://img.alicdn.com/tps/TB1z.55OFXXXXcLXXXXXXXXXXXX-560-560.jpg"></img>
+    <image style="width: 560;height: 560;" src="https://img.alicdn.com/tps/TB1z.55OFXXXXcLXXXXXXXXXXXX-560-560.jpg" />
   </div>
 </template>
-体验一下
+```
 
-子组件
-<image> 组件不支持任何子组件，因此不要尝试在 <image> 组件中添加任何组件。如果需要实现 background-image 的效果，可以使用 <image> 组件和 position 定位来现实，如下面代码。
+### 子组件
+`<image>` **组件不支持任何子组件**，因此不要尝试在 `<image>` 组件中添加任何组件。如果需要实现 `background-image` 的效果，可以使用 `<image>` 组件和 `position` 定位来现实，如下面代码。
 
+**background-image示例**
+```html
 <template>
   <div>
-    <img style="width:750; height:750;" src="https://img.alicdn.com/tps/TB1z.55OFXXXXcLXXXXXXXXXXXX-560-560.jpg"></img>
+    <img style="width:750; height:750;" src="https://img.alicdn.com/tps/TB1z.55OFXXXXcLXXXXXXXXXXXX-560-560.jpg" />
     <div class="title">
       <text style="font-size:50; color: #ff0000">你好，image</text>
     </div>
@@ -29,58 +33,56 @@
     left:10;
   }
 </style>
-体验一下
+```
 
-特性
-<image> 组件，包含 src 和 resize 两个重要特性。
 
-src {string}：定义图片链接，目前图片暂不支持本地图片。
-resize {string}：可以控制图片的拉伸状态，值行为和 W3C 标准一致。
+### 特性
+- `<image>` 组件，包含 `src` 和 `resize` 两个重要特性。
 
-可选值为：
+- `src {string}`：定义图片链接，目前图片暂不支持本地图片。
+- `resize {string}`：可以控制图片的拉伸状态，值行为和 W3C 标准一致。
 
-stretch：默认值，指定图片按照容器拉伸，有可能使图片产生形变。
-cover：指定图片可以被调整到容器，以使图片完全覆盖背景区域，图片有可能被剪裁。
-contain：指定可以不用考虑容器的大小，把图像扩展至最大尺寸，以使其宽度和高度完全适应内容区域。
-例子：
+- 可选值为：
 
-mobile_preview
+  - `stretch`：默认值，指定图片按照容器拉伸，有可能使图片产生形变。
+  - `cover`：指定图片可以被调整到容器，以使图片完全覆盖背景区域，图片有可能被剪裁。
+  - `contain`：指定可以不用考虑容器的大小，把图像扩展至最大尺寸，以使其宽度和高度完全适应内容区域。
 
-体验一下
+### 样式
+- 通用样式：支持所有通用样式
 
-样式
-通用样式：支持所有通用样式
+  - 盒模型
+  - `flexbox` 布局
+  - `position`
+  - `opacity`
+  - `background-color`
 
-盒模型
-flexbox 布局
-position
-opacity
-background-color
-查看 组件通用样式
+  查看 [组件通用样式](https://weex.incubator.apache.org/cn/v-0.10/references/common-style.html)
 
-事件
-load v0.8+：当图片加载完成时触发。目前在 Android、iOS 上支持，H5 暂不支持。
+### 事件
+- `load` v0.8+：当图片加载完成时触发。目前在 Android、iOS 上支持，H5 暂不支持。
 
-通用事件
+- 通用事件
 
-支持所有通用事件：
+  支持所有通用事件：
 
-click
-longpress
-appear
-disappear
-查看 通用事件
+  - `click`
+  - `longpress`
+  - `appear`
+  - `disappear`
 
-约束
-需要指定宽高；
-不支持子组件。
-示例
+  查看 [通用事件](https://weex.incubator.apache.org/cn/v-0.10/references/common-event.html)
+
+### 约束
+1. 需要指定宽高；
+2. 不支持子组件。
+
+## 示例
 我们这里展示了一篇文章，文章标题有一副背景图。
 
-mobile_preview
+这个效果实现起来非常容易，我们只需要将标题文案通过 `position : absolute` 进行定位即可。唯一需要注意的一点是，Weex 目前不支持 `z-index`，因此必须把上层元素放在后。
 
-这个效果实现起来非常容易，我们只需要将标题文案通过 position: absolute 进行定位即可。唯一需要注意的一点是，Weex 目前不支持 z-index，因此必须把上层元素放在后。
-
+```html
 <style>
   .page-head {
     width:750;
@@ -129,4 +131,4 @@ mobile_preview
     </div>
   </scroller>
 </template>
-体验一下
+```

@@ -4,6 +4,7 @@
     "div": "div.md",
     "indicator": "indicator.md",
     "text": "text.md",
+    "textarea": "textarea.md",
     "img": "img.md",
     "switch": "switch.md",
     "image": "image.md",
@@ -11,7 +12,12 @@
     "list": "list.md",
     "scroller": "scroller.md",
     "cell": "cell.md",
-    "slider": "slider.md"
+    "slider": "slider.md",
+    "container": "container.md",
+    "template": "template.md",
+    "name": "name.md",
+    "script": "script.md",
+    "style": "style.md"
   },
   ".source.lua": {
   }

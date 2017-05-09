@@ -1,43 +1,8 @@
-<slider> 组件用于在一个页面中展示多个图片，在前端，这种效果被称为 轮播图。
+### `<slider>` of Element
+`<slider>` 组件用于在一个页面中展示多个图片，在前端，这种效果被称为 轮播图。
 
-子组件
-支持任意类型的 Weex 组件作为其子组件。 其中，还支持以下组件作为子组件展示特殊效果：
-
-<indicator>：用于显示轮播图指示器效果，必须充当 <slider> 组件的子组件使用。
-特性
-auto-play {boolean}：可选值为 true/false，默认的是 false。
-
-该值决定是否自动播放轮播。重置 loadmore 相关的 UI，值不一样就会重置。
-
-interval {number}：值为毫秒数，此值设定 slider 切换时间间隔。当 auto-play 值为 true 时生效。
-
-样式
-通用样式：支持所有通用样式
-
-盒模型
-flexbox 布局
-position
-opacity
-background-color
-查看 组件通用样式
-
-事件
-change: 当轮播索引改变时，触发该事件。
-
-事件中 event 对象属性：
-
-index：展示的图片索引
-通用事件
-
-支持所有通用事件：
-
-click
-longpress
-appear
-disappear
-查看 通用事件
-
-示例
+### 示例
+```html
 <template>
   <div>
     <slider class="slider" interval="3000" auto-play="true">
@@ -96,4 +61,44 @@ disappear
     }
   }
 </script>
-体验一下
+```
+
+### 子组件
+支持任意类型的 Weex 组件作为其子组件。 其中，还支持以下组件作为子组件展示特殊效果：
+
+`<indicator>`：用于显示轮播图指示器效果，必须充当 `<slider>` 组件的子组件使用。
+特性
+`auto-play {boolean}`：可选值为 `true`/`false`，默认的是 `false`。
+
+该值决定是否自动播放轮播。重置 loadmore 相关的 UI，值不一样就会重置。
+
+`interval {number}`：值为毫秒数，此值设定 `slider` 切换时间间隔。当 `auto-play` 值为 `true` 时生效。
+
+### 样式
+通用样式：支持所有通用样式
+
+- 盒模型
+
+  - `flexbox` 布局
+  - `position`
+  - `opacity`
+  - `background-color`
+
+  查看 [组件通用样式](https://weex.incubator.apache.org/cn/v-0.10/references/common-style.html)
+
+### 事件
+- `change`: 当轮播索引改变时，触发该事件。
+
+  事件中 event 对象属性:
+  - `index`：展示的图片索引
+
+
+- 通用事件
+
+  支持所有通用事件：
+
+  - `click`
+  - `longpress`
+  - `appear`
+  - `disappear`
+  查看 [通用事件](https://weex.incubator.apache.org/cn/v-0.10/references/common-event.html)
