@@ -1,6 +1,6 @@
 {
   "name": "nageland",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "nageland.js",
   "scripts": {
@@ -9,16 +9,18 @@
   },
   "author": "Thera Group",
   "license": "MIT",
+  "attachResource": "doc.zip",
   "dependencies": {
-    "season": "^6.0.0",
     "gfm-linkify": "^0.1.0",
     "marked": "^0.3.2",
+    "node-stream-zip": "1.3.7",
     "open": "0.0.5",
     "pygmentize-bundled": "^2.2.0",
+    "querystring": "^0.2.0",
     "request": "^2.47.0",
+    "season": "^6.0.0",
     "tmp": "0.0.24",
-    "yargs": "^1.3.3",
-    "node-stream-zip": "1.3.7"
+    "yargs": "^1.3.3"
   },
   "repository": {
     "type": "git",
