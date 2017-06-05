@@ -19,6 +19,9 @@
     "script": "script.md",
     "style": "style.md"
   },
+  ".source.weexvue": {
+    "a": "weexvue/a.md"
+  },
   ".source.lua": {
   }
 }

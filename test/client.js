@@ -4,6 +4,7 @@ function downLoad (urlString) {
     var url = require('url');
     var fs = require('fs');
     var u = url.parse(urlString);
+    var targetFile = "e.zip"
 
     function _callback(res) {
       var _datas = [];
@@ -16,12 +17,12 @@ function downLoad (urlString) {
       });
 
       res.on('end', function () {
-        if (fs.existsSync('e.zip')) {
-          fs.unlinkSync('e.zip');
+        if (fs.existsSync(targetFile)) {
+          fs.unlinkSync(targetFile);
         }
 
         for (var d of _datas) {
-          fs.appendFileSync('e.zip', d);
+          fs.appendFileSync(targetFile, d);
         }
       });
     }
@@ -152,10 +153,11 @@ function downLoad (urlString) {
         }
 
         try {
-		  console.log(s);
+          console.log(s);
           var data = JSON.parse(JSON.parse(s).alibaba_thera_update_get_response.result.data);
           var urlString = data.docs[0].url;
           downLoad(urlString);
+          // downLoad("http://skycloud-oss.cn-shanghai.oss.aliyun-inc.com/thera/nageland/1.0.0/doc.zip");
         } catch (e) {
           console.log(e);
         }

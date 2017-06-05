@@ -2,7 +2,7 @@
   "name": "nageland",
   "version": "1.0.2",
   "description": "",
-  "main": "nageland.js",
+  "main": "./lib/nageland.js",
   "scripts": {
     "doc": "zip -r doc.zip doc && cp -rf doc.zip ~/.thera",
     "test": "echo \"Error: no test specified\" && exit 1"
