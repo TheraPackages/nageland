@@ -20,7 +20,24 @@
     "style": "style.md"
   },
   ".source.weexvue": {
-    "a": "weexvue/a.md"
+    "a": "weexvue/a.md",
+    "div": "weexvue/div.md",
+    "indicator": "weexvue/indicator.md",
+    "text": "weexvue/text.md",
+    "textarea": "weexvue/textarea.md",
+    "img": "weexvue/img.md",
+    "switch": "weexvue/switch.md",
+    "image": "weexvue/image.md",
+    "input": "weexvue/input.md",
+    "list": "weexvue/list.md",
+    "scroller": "weexvue/scroller.md",
+    "cell": "weexvue/cell.md",
+    "slider": "weexvue/slider.md",
+    "container": "weexvue/container.md",
+    "template": "weexvue/template.md",
+    "name": "weexvue/name.md",
+    "script": "weexvue/script.md",
+    "style": "weexvue/style.md"
   },
   ".source.lua": {
   }
